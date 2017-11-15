@@ -1,0 +1,72 @@
+<%= form_with(model: client, local: true) do |form| %>
+  <% if client.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+      <ul>
+      <% client.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nominative %>
+    <%= form.text_field :nominative, id: :client_nominative %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.email_field :email, id: :client_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :via %>
+    <%= form.text_field :via, id: :client_via %>
+  </div>
+
+  <div class="field">
+    <%= form.label :civico %>
+    <%= form.number_field :civico, id: :client_civico %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cap %>
+    <%= form.number_field :cap, id: :client_cap %>
+  </div>
+
+  <div class="field">
+    <%= form.label :citta %>
+    <%= form.text_field :citta, id: :client_citta %>
+  </div>
+
+  <div class="field">
+    <%= form.label :provincia %>
+    <%= form.text_field :provincia, id: :client_provincia %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stato %>
+    <%= form.text_field :stato, id: :client_stato %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numero %>
+    <%= form.text_field :numero, id: :client_numero %>
+  </div>
+
+  <div class="field">
+    <%= form.label :partita_iva %>
+    <%= form.text_field :partita_iva, id: :client_partita_iva %>
+  </div>
+
+  <div class="field">
+    <%= form.label :codice_fiscale %>
+    <%= form.text_field :codice_fiscale, id: :client_codice_fiscale %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

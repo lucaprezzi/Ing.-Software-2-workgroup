@@ -1,0 +1,29 @@
+
+TABELLA		COLONNE
+
+Client		nominative
+		email
+		via
+		civico
+		cap
+		città
+		provincia
+		stato
+		numero
+		partita_iva
+		codice_fiscale
+
+Performance	client_id		Foreign_key
+		description
+		date
+		duration
+		invoiced
+		rate_id			Foreign_key
+
+Rate		hourly_rate
+
+Invoice		client_id		Foreign_key
+		date
+		file			
+		amount
+		number

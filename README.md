@@ -1,24 +1,8 @@
-# README
+# Invoicing system app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Questa repository è dedicata allo sviluppo di un'applicazione di fatturazione, assignment per il corso di Ingegneria del Software 2.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Componenti del gruppo: 
+*Viktoriya Kasiy
+*Luca prezzi
+*Paolo Saglia

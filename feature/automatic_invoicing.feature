@@ -3,10 +3,8 @@ Feature: manage automatic invoice
   As a user
   I want to invoice in an automatic way
 
-  
   Background:
     Given there is a performance of the previous month
-
 
   Scenario: automatic invoicing
     When I open the home page

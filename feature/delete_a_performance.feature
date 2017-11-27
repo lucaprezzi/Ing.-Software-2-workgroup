@@ -14,4 +14,4 @@ Feature: delete a performance
     And I press "Ok"
     Then I should be on performances page
     And the performance should not be in the list
-	And I should see a notice indicating success
+    And I should see a notice indicating success

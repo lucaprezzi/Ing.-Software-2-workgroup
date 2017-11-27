@@ -11,7 +11,7 @@ Feature: delete an invoice
   Scenario: delete an invoice
     Given I am on the invoices page
     When I press "Delete"
-	And I press "OK"
+    And I press "OK"
     Then I should be on invoices page
     And I should see a notice indicating success
     And the invoice should not be in the list

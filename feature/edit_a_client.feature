@@ -12,7 +12,7 @@ Feature: edit a client
     Given I am on the clients page
     When I press "Edit"
     And I fill in the following:
-      | nominative        | Paolo Collini              |
+      | nominative        | Paolo Collini             |
     Then I should be on the show page of the client
     And I should see a notice indicating success
     And the "nominative" field should contain "Paolo Collini"
@@ -22,7 +22,7 @@ Feature: edit a client
     Given I am on the clients page
     When I press "Edit"
     And I fill in the following:
-      | email             | paolo.collini@unitn.it     |
+      | email             | paolo.collini@unitn.it    |
     Then I should be on the show page of the client
     And I should see a notice indicating success
     And the "email" field should contain "paolo.collini@unitn.it"
@@ -32,7 +32,7 @@ Feature: edit a client
     Given I am on the clients page
     When I press "Edit"
     And I fill in the following:
-      | via               | Brennero       		       |
+      | via               | Brennero       		        |
     Then I should be on the show page of the client
     And I should see a notice indicating success
     And the "via" field should contain "Brennero"

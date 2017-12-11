@@ -1,0 +1,16 @@
+<center>
+  <p id="notice"><%= notice %></p>
+
+
+<div class="show_recap">
+  <p>
+    <strong>Hourly rate:</strong>
+    <%='%.2f' % @rate.hourly_rate %> €
+  </p>
+</div>
+
+<br>
+<%= link_to 'Edit', edit_rate_path(@rate) , :class=>"show-btn"%> |
+<%= link_to 'Back', rates_path , :class=>"show-btn"%>
+
+</center>

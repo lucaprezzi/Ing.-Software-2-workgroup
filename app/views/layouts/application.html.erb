@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= fulltitle(yield(:title)) %></title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <script src="https://use.fontawesome.com/9610a43122.js"></script>
+
+  </head>
+
+  <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "INVOICING APP", '/home', id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right ">
+              <li><%= link_to "Home", '/home' ,:class=>'navbar_links'%></li>
+              <li><%= link_to "Clients", '/clients' ,:class=>'navbar_links'%></li>
+              <li><%= link_to "Performances", '/performances' ,:class=>'navbar_links'%></li>
+              <li><%= link_to "Invoices", '/invoices' ,:class=>'navbar_links'%></li>
+              <li><%= link_to "Rates", '/rates' ,:class=>'navbar_links'%></li>
+              <li><%= link_to "Settings", '/settings' ,:class=>'navbar_links'%></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+
+
+      <% if (oggi_devo_fatturare) then fattura_tutto end %>
+      <%= yield %>
+    </div>
+
+
+  </body>
+</html>

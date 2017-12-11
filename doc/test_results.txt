@@ -1,0 +1,925 @@
+Using the default profile...
+Feature: manage automatic invoice
+  In order to keep track of invoices in my app
+  As a user
+  I want to invoice in an automatic way
+
+  Background:                                          # features/automatic_invoicing.feature:7
+    Given there is a performance of the previous month # features/step_definitions/automatic_invoicing_step.rb:1
+
+  Scenario: automatic invoicing                                          # features/automatic_invoicing.feature:11
+    When I open the home page                                            # features/step_definitions/automatic_invoicing_step.rb:7
+    Then all the performances related to the previous month are invoiced # features/step_definitions/automatic_invoicing_step.rb:11
+
+Feature: change the page
+  In order to keep track of clients in my app
+  As a user
+  I want to move in the website
+
+  Background:                   # features/change_the_page.feature:7
+    Given I am on the home page # features/step_definitions/shared_step.rb:75
+
+  Scenario: move to clients page from homepage # features/change_the_page.feature:11
+    Given I am on the home page                # features/step_definitions/shared_step.rb:75
+    When I press "Clients"                     # features/step_definitions/shared_step.rb:2
+    Then I should be on clients page           # features/step_definitions/shared_step.rb:46
+
+  Scenario: move to clients page from performances # features/change_the_page.feature:17
+    Given I am on the performances page            # features/step_definitions/shared_step.rb:87
+    When I press "Clients"                         # features/step_definitions/shared_step.rb:2
+    Then I should be on clients page               # features/step_definitions/shared_step.rb:46
+
+  Scenario: move to clients page from invoices # features/change_the_page.feature:23
+    Given I am on the invoices page            # features/step_definitions/shared_step.rb:100
+    When I press "Clients"                     # features/step_definitions/shared_step.rb:2
+    Then I should be on clients page           # features/step_definitions/shared_step.rb:46
+
+  Scenario: move to clients page from rates # features/change_the_page.feature:29
+    Given I am on the rates page            # features/step_definitions/shared_step.rb:91
+    When I press "Clients"                  # features/step_definitions/shared_step.rb:2
+    Then I should be on clients page        # features/step_definitions/shared_step.rb:46
+
+  Scenario: move to clients page from settings # features/change_the_page.feature:35
+    Given I am on the settings page            # features/step_definitions/shared_step.rb:67
+    When I press "Clients"                     # features/step_definitions/shared_step.rb:2
+    Then I should be on clients page           # features/step_definitions/shared_step.rb:46
+
+  Scenario: move to performances page from homepage # features/change_the_page.feature:41
+    Given I am on the home page                     # features/step_definitions/shared_step.rb:75
+    When I press "Performances"                     # features/step_definitions/shared_step.rb:2
+    Then I should be on performances page           # features/step_definitions/shared_step.rb:53
+
+  Scenario: move to performances page from clients # features/change_the_page.feature:47
+    Given I am on the clients page                 # features/step_definitions/shared_step.rb:83
+    When I press "Performances"                    # features/step_definitions/shared_step.rb:2
+    Then I should be on performances page          # features/step_definitions/shared_step.rb:53
+
+  Scenario: move to performances page from invoices # features/change_the_page.feature:53
+    Given I am on the invoices page                 # features/step_definitions/shared_step.rb:100
+    When I press "Performances"                     # features/step_definitions/shared_step.rb:2
+    Then I should be on performances page           # features/step_definitions/shared_step.rb:53
+
+  Scenario: move to performances page from rates # features/change_the_page.feature:59
+    Given I am on the rates page                 # features/step_definitions/shared_step.rb:91
+    When I press "Performances"                  # features/step_definitions/shared_step.rb:2
+    Then I should be on performances page        # features/step_definitions/shared_step.rb:53
+
+  Scenario: move to performances page from settings # features/change_the_page.feature:65
+    Given I am on the settings page                 # features/step_definitions/shared_step.rb:67
+    When I press "Performances"                     # features/step_definitions/shared_step.rb:2
+    Then I should be on performances page           # features/step_definitions/shared_step.rb:53
+
+  Scenario: move to invoices page from homepage # features/change_the_page.feature:71
+    Given I am on the home page                 # features/step_definitions/shared_step.rb:75
+    When I press "Invoices"                     # features/step_definitions/shared_step.rb:2
+    Then I should be on invoices page           # features/step_definitions/shared_step.rb:39
+
+  Scenario: move to invoices page from clients # features/change_the_page.feature:77
+    Given I am on the clients page             # features/step_definitions/shared_step.rb:83
+    When I press "Invoices"                    # features/step_definitions/shared_step.rb:2
+    Then I should be on invoices page          # features/step_definitions/shared_step.rb:39
+
+  Scenario: move to invoices page from performances # features/change_the_page.feature:83
+    Given I am on the performances page             # features/step_definitions/shared_step.rb:87
+    When I press "Invoices"                         # features/step_definitions/shared_step.rb:2
+    Then I should be on invoices page               # features/step_definitions/shared_step.rb:39
+
+  Scenario: move to invoices page from rates # features/change_the_page.feature:89
+    Given I am on the rates page             # features/step_definitions/shared_step.rb:91
+    When I press "Invoices"                  # features/step_definitions/shared_step.rb:2
+    Then I should be on invoices page        # features/step_definitions/shared_step.rb:39
+
+  Scenario: move to invoices page from settings # features/change_the_page.feature:95
+    Given I am on the settings page             # features/step_definitions/shared_step.rb:67
+    When I press "Invoices"                     # features/step_definitions/shared_step.rb:2
+    Then I should be on invoices page           # features/step_definitions/shared_step.rb:39
+
+  Scenario: move to rates page from homepage # features/change_the_page.feature:101
+    Given I am on the home page              # features/step_definitions/shared_step.rb:75
+    When I press "Rates"                     # features/step_definitions/shared_step.rb:2
+    Then I should be on rates page           # features/step_definitions/shared_step.rb:60
+
+  Scenario: move to rates page from clients # features/change_the_page.feature:107
+    Given I am on the clients page          # features/step_definitions/shared_step.rb:83
+    When I press "Rates"                    # features/step_definitions/shared_step.rb:2
+    Then I should be on rates page          # features/step_definitions/shared_step.rb:60
+
+  Scenario: move to rates page from performances # features/change_the_page.feature:113
+    Given I am on the performances page          # features/step_definitions/shared_step.rb:87
+    When I press "Rates"                         # features/step_definitions/shared_step.rb:2
+    Then I should be on rates page               # features/step_definitions/shared_step.rb:60
+
+  Scenario: move to rates page from invoices # features/change_the_page.feature:119
+    Given I am on the invoices page          # features/step_definitions/shared_step.rb:100
+    When I press "Rates"                     # features/step_definitions/shared_step.rb:2
+    Then I should be on rates page           # features/step_definitions/shared_step.rb:60
+
+  Scenario: move to rates page from settings # features/change_the_page.feature:125
+    Given I am on the settings page          # features/step_definitions/shared_step.rb:67
+    When I press "Rates"                     # features/step_definitions/shared_step.rb:2
+    Then I should be on rates page           # features/step_definitions/shared_step.rb:60
+
+  Scenario: move to settings page from homepage # features/change_the_page.feature:131
+    Given I am on the home page                 # features/step_definitions/shared_step.rb:75
+    When I press "Settings"                     # features/step_definitions/shared_step.rb:2
+    Then I should be on settings page           # features/step_definitions/shared_step.rb:32
+
+  Scenario: move to settings page from clients # features/change_the_page.feature:137
+    Given I am on the clients page             # features/step_definitions/shared_step.rb:83
+    When I press "Settings"                    # features/step_definitions/shared_step.rb:2
+    Then I should be on settings page          # features/step_definitions/shared_step.rb:32
+
+  Scenario: move to settings page from performances # features/change_the_page.feature:143
+    Given I am on the performances page             # features/step_definitions/shared_step.rb:87
+    When I press "Settings"                         # features/step_definitions/shared_step.rb:2
+    Then I should be on settings page               # features/step_definitions/shared_step.rb:32
+
+  Scenario: move to settings page from invoices # features/change_the_page.feature:149
+    Given I am on the invoices page             # features/step_definitions/shared_step.rb:100
+    When I press "Settings"                     # features/step_definitions/shared_step.rb:2
+    Then I should be on settings page           # features/step_definitions/shared_step.rb:32
+
+  Scenario: move to settings page from rates # features/change_the_page.feature:155
+    Given I am on the rates page             # features/step_definitions/shared_step.rb:91
+    When I press "Settings"                  # features/step_definitions/shared_step.rb:2
+    Then I should be on settings page        # features/step_definitions/shared_step.rb:32
+
+  Scenario: move to not invoiced performances page from performances page # features/change_the_page.feature:161
+    Given I am on the performances page                                   # features/step_definitions/shared_step.rb:87
+    When I press "Show only not invoiced performances"                    # features/step_definitions/shared_step.rb:2
+    Then I should be on not invoiced performances page                    # features/step_definitions/change_the_page_step.rb:1
+
+  Scenario: move to performances page from not invoiced performances page # features/change_the_page.feature:166
+    Given I am on the not invoiced performances page                      # features/step_definitions/change_the_page_step.rb:8
+    When I press "Show all performances"                                  # features/step_definitions/shared_step.rb:2
+    Then I should be on performances page                                 # features/step_definitions/shared_step.rb:53
+
+Feature: create a new client
+  In order to keep track of clients in my app
+  As a user
+  I want to create a new client
+
+  Background:                                                             # features/create_a_new_client.feature:7
+    Given there is not a client called "Università degli studi di Trento" # features/step_definitions/create_a_new_client_steps.rb:1
+
+  Scenario: create a client with valid values and without codice fiscale # features/create_a_new_client.feature:11
+    Given I am on the clients page                                       # features/step_definitions/shared_step.rb:83
+    When I press "New Client"                                            # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                                         # features/step_definitions/shared_step.rb:6
+      | client_nominative     | Università degli studi di Trento |
+      | client_email          | mail@unitn.it                    |
+      | client_via            | Sommarive                        |
+      | client_civico         | 5                                |
+      | client_cap            | 38123                            |
+      | client_citta          | Povo                             |
+      | client_provincia      | Trento                           |
+      | client_stato          | Italia                           |
+      | client_numero         | 3891290673                       |
+      | client_partita_iva    | 13066701007                      |
+      | client_codice_fiscale |                                  |
+    And I press "Submit"                                                 # features/step_definitions/shared_step.rb:2
+    Then I should be on the show page of my new client                   # features/step_definitions/create_a_new_client_steps.rb:6
+    And I should see a notice indicating success                         # features/step_definitions/shared_step.rb:12
+
+  Scenario: create a client with valid values and without partita iva # features/create_a_new_client.feature:31
+    Given I am on the clients page                                    # features/step_definitions/shared_step.rb:83
+    When I press "New Client"                                         # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                                      # features/step_definitions/shared_step.rb:6
+      | client_nominative     | Università degli studi di Trento |
+      | client_email          | mail@unitn.it                    |
+      | client_via            | Sommarive                        |
+      | client_civico         | 5                                |
+      | client_cap            | 38123                            |
+      | client_citta          | Povo                             |
+      | client_provincia      | Trento                           |
+      | client_stato          | Italia                           |
+      | client_numero         | 3891290673                       |
+      | client_partita_iva    |                                  |
+      | client_codice_fiscale | UNVTRT66A31H345A                 |
+    And I press "Submit"                                              # features/step_definitions/shared_step.rb:2
+    Then I should be on the show page of my new client                # features/step_definitions/create_a_new_client_steps.rb:6
+    And I should see a notice indicating success                      # features/step_definitions/shared_step.rb:12
+
+  Scenario: error when inserting invalid client_nominative # features/create_a_new_client.feature:51
+    Given I am on the clients page                         # features/step_definitions/shared_step.rb:83
+    When I press "New Client"                              # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                           # features/step_definitions/shared_step.rb:6
+      | client_nominative |  |
+    And I press "Submit"                                   # features/step_definitions/shared_step.rb:2
+    Then I should get an error message                     # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when inserting invalid client_email # features/create_a_new_client.feature:60
+    Given I am on the clients page                    # features/step_definitions/shared_step.rb:83
+    When I press "New Client"                         # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                      # features/step_definitions/shared_step.rb:6
+      | client_email | viktoriya.kasiy |
+    And I press "Submit"                              # features/step_definitions/shared_step.rb:2
+    Then I should get an error message                # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when not inserting client_email # features/create_a_new_client.feature:69
+    Given I am on the clients page                # features/step_definitions/shared_step.rb:83
+    When I press "New Client"                     # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                  # features/step_definitions/shared_step.rb:6
+      | client_email |  |
+    And I press "Submit"                          # features/step_definitions/shared_step.rb:2
+    Then I should get an error message            # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when inserting invalid client_via # features/create_a_new_client.feature:78
+    Given I am on the clients page                  # features/step_definitions/shared_step.rb:83
+    When I press "New Client"                       # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                    # features/step_definitions/shared_step.rb:6
+      | client_via |  |
+    And I press "Submit"                            # features/step_definitions/shared_step.rb:2
+    Then I should get an error message              # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when inserting invalid client_civico # features/create_a_new_client.feature:87
+    Given I am on the clients page                     # features/step_definitions/shared_step.rb:83
+    When I press "New Client"                          # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                       # features/step_definitions/shared_step.rb:6
+      | client_civico | bnhj |
+    And I press "Submit"                               # features/step_definitions/shared_step.rb:2
+    Then I should get an error message                 # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when inserting invalid client_civico # features/create_a_new_client.feature:96
+    Given I am on the clients page                     # features/step_definitions/shared_step.rb:83
+    When I press "New Client"                          # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                       # features/step_definitions/shared_step.rb:6
+      | client_civico |  |
+    And I press "Submit"                               # features/step_definitions/shared_step.rb:2
+    Then I should get an error message                 # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when inserting invalid client_cap # features/create_a_new_client.feature:105
+    Given I am on the clients page                  # features/step_definitions/shared_step.rb:83
+    When I press "New Client"                       # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                    # features/step_definitions/shared_step.rb:6
+      | client_cap | bjhnm |
+    And I press "Submit"                            # features/step_definitions/shared_step.rb:2
+    Then I should get an error message              # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when not inserting client_cap # features/create_a_new_client.feature:114
+    Given I am on the clients page              # features/step_definitions/shared_step.rb:83
+    When I press "New Client"                   # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                # features/step_definitions/shared_step.rb:6
+      | client_cap |  |
+    And I press "Submit"                        # features/step_definitions/shared_step.rb:2
+    Then I should get an error message          # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when inserting invalid client_citta # features/create_a_new_client.feature:123
+    Given I am on the clients page                    # features/step_definitions/shared_step.rb:83
+    When I press "New Client"                         # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                      # features/step_definitions/shared_step.rb:6
+      | client_citta |  |
+    And I press "Submit"                              # features/step_definitions/shared_step.rb:2
+    Then I should get an error message                # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when inserting invalid telephone number # features/create_a_new_client.feature:132
+    Given I am on the clients page                        # features/step_definitions/shared_step.rb:83
+    When I press "New Client"                             # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                          # features/step_definitions/shared_step.rb:6
+      | client_numero |  |
+    And I press "Submit"                                  # features/step_definitions/shared_step.rb:2
+    Then I should get an error message                    # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when inserting invalid codice fiscale # features/create_a_new_client.feature:141
+    Given I am on the clients page                      # features/step_definitions/shared_step.rb:83
+    When I press "New Client"                           # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                        # features/step_definitions/shared_step.rb:6
+      | client_codice_fiscale | KS67 |
+    And I press "Submit"                                # features/step_definitions/shared_step.rb:2
+    Then I should get an error message                  # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when inserting invalid partita iva # features/create_a_new_client.feature:150
+    Given I am on the clients page                   # features/step_definitions/shared_step.rb:83
+    When I press "New Client"                        # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                     # features/step_definitions/shared_step.rb:6
+      | client_partita_iva | hju45 |
+    And I press "Submit"                             # features/step_definitions/shared_step.rb:2
+    Then I should get an error message               # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when not inserting partita iva and codice fiscale # features/create_a_new_client.feature:159
+    Given I am on the clients page                                  # features/step_definitions/shared_step.rb:83
+    When I press "New Client"                                       # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                                    # features/step_definitions/shared_step.rb:6
+      | client_partita_iva    |  |
+      | client_codice_fiscale |  |
+    And I press "Submit"                                            # features/step_definitions/shared_step.rb:2
+    Then I should get an error message                              # features/step_definitions/shared_step.rb:16
+
+Feature: create a new invoice
+  In order to keep track of invoices in my app
+  As a user
+  I want to create a new invoice
+
+  Background:                                                         # features/create_a_new_invoice.feature:7
+    Given there is a client called "Università degli studi di Trento" # features/step_definitions/shared_step.rb:20
+
+  Scenario: create a valid invoice                                                                                                                # features/create_a_new_invoice.feature:11
+    Given I am on the invoices page                                                                                                               # features/step_definitions/shared_step.rb:100
+    And there are at least one performance related to the client called "Università degli Studi di Trento" that has not been invoiced in the past # features/step_definitions/create_a_new_invoice_step.rb:6
+    When I press "New Invoice"                                                                                                                    # features/step_definitions/shared_step.rb:2
+    And I select "Università degli Studi di Trento" from "invoice[client_id]"                                                                     # features/step_definitions/shared_step.rb:24
+    And I press "Submit"                                                                                                                          # features/step_definitions/shared_step.rb:2
+    Then I should be on invoices page                                                                                                             # features/step_definitions/shared_step.rb:39
+    And I should see a notice indicating success                                                                                                  # features/step_definitions/shared_step.rb:12
+
+  Scenario: error when trying to invoice to a client that has 0 performances that can be invoices                                                    # features/create_a_new_invoice.feature:21
+    Given I am on the invoices page                                                                                                                  # features/step_definitions/shared_step.rb:100
+    And there is not at least one performance related to the client called "Università degli Studi di Trento" that has not been invoiced in the past # features/step_definitions/create_a_new_invoice_step.rb:16
+    When I press "New Invoice"                                                                                                                       # features/step_definitions/shared_step.rb:2
+    Then I should not see the client "Università degli Studi di Trento" in the dropdown menu                                                         # features/step_definitions/create_a_new_invoice_step.rb:2
+
+  Scenario: invoice number assigned in creation changes if exist an other invoice of the same year                                                # features/create_a_new_invoice.feature:27
+    Given there is an invoice                                                                                                                     # features/step_definitions/shared_step.rb:110
+    And there is a performance                                                                                                                    # features/step_definitions/shared_step.rb:118
+    And I am on the invoices page                                                                                                                 # features/step_definitions/shared_step.rb:100
+    And there are at least one performance related to the client called "Università degli Studi di Trento" that has not been invoiced in the past # features/step_definitions/create_a_new_invoice_step.rb:6
+    When I press "New Invoice"                                                                                                                    # features/step_definitions/shared_step.rb:2
+    And I select "Università degli Studi di Trento" from "invoice[client_id]"                                                                     # features/step_definitions/shared_step.rb:24
+    And I press "Submit"                                                                                                                          # features/step_definitions/shared_step.rb:2
+    Then I should be on invoices page                                                                                                             # features/step_definitions/shared_step.rb:39
+    And I should see a notice indicating success                                                                                                  # features/step_definitions/shared_step.rb:12
+    And I should see "2 - 2017"                                                                                                                   # features/step_definitions/shared_step.rb:79
+
+Feature: create a new performance
+  In order to keep track of performances in my app
+  As a user
+  I want to create a performance
+
+  Background:                                                         # features/create_a_new_performance.feature:7
+    Given there is a client called "Università degli Studi di Trento" # features/step_definitions/shared_step.rb:20
+    And there is a rate with value "9.5"                              # features/step_definitions/shared_step.rb:71
+
+  Scenario: create a valid performance                                            # features/create_a_new_performance.feature:12
+    Given I am on the performances page                                           # features/step_definitions/shared_step.rb:87
+    When I press "New Performance"                                                # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                                                  # features/step_definitions/shared_step.rb:6
+      | performance_description | sviluppo app per voti |
+      | performance_duration    | 8                     |
+    And I select "Università degli Studi di Trento" from "performance[client_id]" # features/step_definitions/shared_step.rb:24
+    And I select "9.5" from "performance[rate_id]"                                # features/step_definitions/shared_step.rb:24
+    And I select "25" from "performance[date(3i)]"                                # features/step_definitions/shared_step.rb:24
+    And I select "November" from "performance[date(2i)]"                          # features/step_definitions/shared_step.rb:24
+    And I select "2017" from "performance[date(1i)]"                              # features/step_definitions/shared_step.rb:24
+    And I press "Submit"                                                          # features/step_definitions/shared_step.rb:2
+    Then I should be on the show page of the performance "sviluppo app per voti"  # features/step_definitions/create_a_new_performance_step.rb:2
+    And I should see a notice indicating success                                  # features/step_definitions/shared_step.rb:12
+
+  Scenario: error when inserting invalid performance_duration # features/create_a_new_performance.feature:28
+    Given I am on the performances page                       # features/step_definitions/shared_step.rb:87
+    When I press "New Performance"                            # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                              # features/step_definitions/shared_step.rb:6
+      | performance_duration | hkl |
+    And I press "Submit"                                      # features/step_definitions/shared_step.rb:2
+    Then I should get an error message                        # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when editing a performance without specifying an existing client # features/create_a_new_performance.feature:37
+    Given I am on the performances page                                            # features/step_definitions/shared_step.rb:87
+    When I press "New Performance"                                                 # features/step_definitions/shared_step.rb:2
+    And I do not select client from "performance[client_id]"                       # features/step_definitions/shared_step.rb:28
+    And I press "Submit"                                                           # features/step_definitions/shared_step.rb:2
+    Then I should get an error message                                             # features/step_definitions/shared_step.rb:16
+
+Feature: create a rate
+  In order to keep track of rates in my app
+  As a user
+  I want to create a new rate
+
+  Background:                                  # features/create_a_new_rate.feature:7
+    Given there is not a rate with value "9.5" # features/step_definitions/create_a_new_rate_step.rb:2
+
+  Scenario: create a valid rate                      # features/create_a_new_rate.feature:11
+    Given I am on the rates page                     # features/step_definitions/shared_step.rb:91
+    When I press "New Rate"                          # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                     # features/step_definitions/shared_step.rb:6
+      | rate_hourly_rate | 9.5 |
+    And I press "Submit"                             # features/step_definitions/shared_step.rb:2
+    Then I should be on the show page of my new rate # features/step_definitions/shared_step.rb:130
+    And I should see a notice indicating success     # features/step_definitions/shared_step.rb:12
+
+  Scenario: error when inserting an invalid hourly rate # features/create_a_new_rate.feature:21
+    Given I am on the rates page                        # features/step_definitions/shared_step.rb:91
+    When I press "New Rate"                             # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                        # features/step_definitions/shared_step.rb:6
+      | rate_hourly_rate | jkdshkfgsd |
+    And I press "Submit"                                # features/step_definitions/shared_step.rb:2
+    Then I should get an error message                  # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when inserting an invalid hourly rate # features/create_a_new_rate.feature:30
+    Given I am on the rates page                        # features/step_definitions/shared_step.rb:91
+    When I press "New Rate"                             # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                        # features/step_definitions/shared_step.rb:6
+      | rate_hourly_rate | 9,5 |
+    And I press "Submit"                                # features/step_definitions/shared_step.rb:2
+    Then I should get an error message                  # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when inserting an hourly rate that already exists # features/create_a_new_rate.feature:39
+    Given I am on the rates page                                    # features/step_definitions/shared_step.rb:91
+    And there is a rate with value "8.5"                            # features/step_definitions/shared_step.rb:71
+    When I press "New Rate"                                         # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                                    # features/step_definitions/shared_step.rb:6
+      | rate_hourly_rate | 8.5 |
+    And I press "Submit"                                            # features/step_definitions/shared_step.rb:2
+    Then I should get an error message                              # features/step_definitions/shared_step.rb:16
+
+Feature: delete a client
+  In order to keep track of clients in my app
+  As a user
+  I want to delete a client
+
+  Background:                                                         # features/delete_a_client.feature:7
+    Given there is a client called "Università degli Studi di Trento" # features/step_definitions/shared_step.rb:20
+
+  @javascript
+  Scenario: delete a client                                                                     # features/delete_a_client.feature:11
+    Given I am on the clients page                                                              # features/step_definitions/shared_step.rb:83
+    When I press "Delete"                                                                       # features/step_definitions/shared_step.rb:2
+    And I press Ok on the popup                                                                 # features/step_definitions/shared_step.rb:96
+    Then I should be on clients page                                                            # features/step_definitions/shared_step.rb:46
+    And I should see a notice indicating success                                                # features/step_definitions/shared_step.rb:12
+    And the client "Università degli Studi di Trento" should not be in the list                 # features/step_definitions/delete_a_client_step.rb:5
+    And all the performances of the client "Università degli Studi di Trento" should be deleted # features/step_definitions/delete_a_client_step.rb:1
+
+Feature: delete a performance
+  In order to keep track of performances in my app
+  As a user
+  I want to delete a performance
+
+  Background:                                                                                                          # features/delete_a_performance.feature:7
+    Given there is a performance called "Sviluppo App" related to the client called "Università degli studi di Trento" # features/step_definitions/shared_step.rb:104
+
+  @javascript
+  Scenario: delete a performance                                 # features/delete_a_performance.feature:11
+    Given I am on the performances page                          # features/step_definitions/shared_step.rb:87
+    When I press "Delete"                                        # features/step_definitions/shared_step.rb:2
+    And I press Ok on the popup                                  # features/step_definitions/shared_step.rb:96
+    Then I should be on performances page                        # features/step_definitions/shared_step.rb:53
+    And the performance "Sviluppo App" should not be in the list # features/step_definitions/delete_a_performance_step.rb:2
+    And I should see a notice indicating success                 # features/step_definitions/shared_step.rb:12
+
+Feature: delete a rate
+  In order to keep track of rates in my app
+  As a user
+  I want to delete a rate
+
+  Background:                              # features/delete_a_rate.feature:7
+    Given there is a rate with value "9.5" # features/step_definitions/shared_step.rb:71
+    And there is a performance             # features/step_definitions/shared_step.rb:118
+
+  @javascript
+  Scenario: delete a rate                                      # features/delete_a_rate.feature:13
+    Given I am on the rates page                               # features/step_definitions/shared_step.rb:91
+    When I press "Delete"                                      # features/step_definitions/shared_step.rb:2
+    And I press Ok on the popup                                # features/step_definitions/shared_step.rb:96
+    Then I should be on rates page                             # features/step_definitions/shared_step.rb:60
+    And I should see a notice indicating success               # features/step_definitions/shared_step.rb:12
+    And the rate "9.5" should not be in the list               # features/step_definitions/delete_a_rate_step.rb:1
+    And all the performances with rate "9.5" should be deleted # features/step_definitions/delete_a_rate_step.rb:5
+
+Feature: delete an invoice
+  In order to keep track of invoices in my app
+  As a user
+  I want to delete an invoice
+
+  Background:                                                                         # features/delete_an_invoice.feature:7
+    Given there is an invoice of the client called "Università degli studi di Trento" # features/step_definitions/shared_step.rb:123
+
+  @javascript
+  Scenario: delete an invoice                                                                  # features/delete_an_invoice.feature:11
+    Given I am on the invoices page                                                            # features/step_definitions/shared_step.rb:100
+    When I press "Delete"                                                                      # features/step_definitions/shared_step.rb:2
+    And I press Ok on the popup                                                                # features/step_definitions/shared_step.rb:96
+    Then I should be on invoices page                                                          # features/step_definitions/shared_step.rb:39
+    And I should see a notice indicating success                                               # features/step_definitions/shared_step.rb:12
+    And the invoice of the client "Università degli Studi di Trento" should not be in the list # features/step_definitions/delete_an_invoice_step.rb:1
+
+Feature: edit a client
+  In order to keep track of clients in my app
+  As a user
+  I want to edit the profile of a client
+
+  Background:                                                         # features/edit_a_client.feature:7
+    Given there is a client called "Università degli Studi di Trento" # features/step_definitions/shared_step.rb:20
+
+  Scenario: change nominative                                              # features/edit_a_client.feature:11
+    Given I am on the clients page                                         # features/step_definitions/shared_step.rb:83
+    When I press "Edit"                                                    # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                                           # features/step_definitions/shared_step.rb:6
+      | client_nominative | Paolo Collini |
+    And I press "Submit"                                                   # features/step_definitions/shared_step.rb:2
+    Then I should be on the show page of the client called "Paolo Collini" # features/step_definitions/edit_a_client_step.rb:2
+    And I should see a notice indicating success                           # features/step_definitions/shared_step.rb:12
+    And the "nominative" field should contain "Paolo Collini"              # features/step_definitions/shared_step.rb:138
+
+  Scenario: change email                                                                      # features/edit_a_client.feature:22
+    Given I am on the clients page                                                            # features/step_definitions/shared_step.rb:83
+    When I press "Edit"                                                                       # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                                                              # features/step_definitions/shared_step.rb:6
+      | client_email | paolo.collini@unitn.it |
+    And I press "Submit"                                                                      # features/step_definitions/shared_step.rb:2
+    Then I should be on the show page of the client called "Università degli Studi di Trento" # features/step_definitions/edit_a_client_step.rb:2
+    And I should see a notice indicating success                                              # features/step_definitions/shared_step.rb:12
+    And the "email" field should contain "paolo.collini@unitn.it"                             # features/step_definitions/shared_step.rb:138
+
+  Scenario: change via                                                                        # features/edit_a_client.feature:33
+    Given I am on the clients page                                                            # features/step_definitions/shared_step.rb:83
+    When I press "Edit"                                                                       # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                                                              # features/step_definitions/shared_step.rb:6
+      | client_via | Brennero |
+    And I press "Submit"                                                                      # features/step_definitions/shared_step.rb:2
+    Then I should be on the show page of the client called "Università degli Studi di Trento" # features/step_definitions/edit_a_client_step.rb:2
+    And I should see a notice indicating success                                              # features/step_definitions/shared_step.rb:12
+    And the "via" field should contain "Brennero"                                             # features/step_definitions/shared_step.rb:138
+
+  Scenario: change civico                                                                     # features/edit_a_client.feature:44
+    Given I am on the clients page                                                            # features/step_definitions/shared_step.rb:83
+    When I press "Edit"                                                                       # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                                                              # features/step_definitions/shared_step.rb:6
+      | client_civico | 435 |
+    And I press "Submit"                                                                      # features/step_definitions/shared_step.rb:2
+    Then I should be on the show page of the client called "Università degli Studi di Trento" # features/step_definitions/edit_a_client_step.rb:2
+    And I should see a notice indicating success                                              # features/step_definitions/shared_step.rb:12
+    And I should see "435"                                                                    # features/step_definitions/shared_step.rb:79
+
+  Scenario: change cap                                                                        # features/edit_a_client.feature:55
+    Given I am on the clients page                                                            # features/step_definitions/shared_step.rb:83
+    When I press "Edit"                                                                       # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                                                              # features/step_definitions/shared_step.rb:6
+      | client_cap | 38122 |
+    And I press "Submit"                                                                      # features/step_definitions/shared_step.rb:2
+    Then I should be on the show page of the client called "Università degli Studi di Trento" # features/step_definitions/edit_a_client_step.rb:2
+    And I should see a notice indicating success                                              # features/step_definitions/shared_step.rb:12
+    And I should see "38122"                                                                  # features/step_definitions/shared_step.rb:79
+
+  Scenario: change città                                                                      # features/edit_a_client.feature:66
+    Given I am on the clients page                                                            # features/step_definitions/shared_step.rb:83
+    When I press "Edit"                                                                       # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                                                              # features/step_definitions/shared_step.rb:6
+      | client_citta | Trento |
+    And I press "Submit"                                                                      # features/step_definitions/shared_step.rb:2
+    Then I should be on the show page of the client called "Università degli Studi di Trento" # features/step_definitions/edit_a_client_step.rb:2
+    And I should see a notice indicating success                                              # features/step_definitions/shared_step.rb:12
+    And the "citta" field should contain "Trento"                                             # features/step_definitions/shared_step.rb:138
+
+  Scenario: change provincia                                                                  # features/edit_a_client.feature:77
+    Given I am on the clients page                                                            # features/step_definitions/shared_step.rb:83
+    When I press "Edit"                                                                       # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                                                              # features/step_definitions/shared_step.rb:6
+      | client_provincia | TN |
+    And I press "Submit"                                                                      # features/step_definitions/shared_step.rb:2
+    Then I should be on the show page of the client called "Università degli Studi di Trento" # features/step_definitions/edit_a_client_step.rb:2
+    And I should see a notice indicating success                                              # features/step_definitions/shared_step.rb:12
+    And the "provincia" field should contain "TN"                                             # features/step_definitions/shared_step.rb:138
+
+  Scenario: change stato                                                                      # features/edit_a_client.feature:88
+    Given I am on the clients page                                                            # features/step_definitions/shared_step.rb:83
+    When I press "Edit"                                                                       # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                                                              # features/step_definitions/shared_step.rb:6
+      | client_stato | Italia |
+    And I press "Submit"                                                                      # features/step_definitions/shared_step.rb:2
+    Then I should be on the show page of the client called "Università degli Studi di Trento" # features/step_definitions/edit_a_client_step.rb:2
+    And I should see a notice indicating success                                              # features/step_definitions/shared_step.rb:12
+    And the "stato" field should contain "Italia"                                             # features/step_definitions/shared_step.rb:138
+
+  Scenario: change telephone number                                                           # features/edit_a_client.feature:99
+    Given I am on the clients page                                                            # features/step_definitions/shared_step.rb:83
+    When I press "Edit"                                                                       # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                                                              # features/step_definitions/shared_step.rb:6
+      | client_numero | 0461 281126 |
+    And I press "Submit"                                                                      # features/step_definitions/shared_step.rb:2
+    Then I should be on the show page of the client called "Università degli Studi di Trento" # features/step_definitions/edit_a_client_step.rb:2
+    And I should see a notice indicating success                                              # features/step_definitions/shared_step.rb:12
+    And the "numero" field should contain "0461 281126"                                       # features/step_definitions/shared_step.rb:138
+
+  Scenario: change partita iva                                                                # features/edit_a_client.feature:110
+    Given I am on the clients page                                                            # features/step_definitions/shared_step.rb:83
+    When I press "Edit"                                                                       # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                                                              # features/step_definitions/shared_step.rb:6
+      | client_partita_iva | 32674523423 |
+    And I press "Submit"                                                                      # features/step_definitions/shared_step.rb:2
+    Then I should be on the show page of the client called "Università degli Studi di Trento" # features/step_definitions/edit_a_client_step.rb:2
+    And I should see a notice indicating success                                              # features/step_definitions/shared_step.rb:12
+    And the "partita_iva" field should contain "32674523423"                                  # features/step_definitions/shared_step.rb:138
+
+  Scenario: change codice fiscale                                                             # features/edit_a_client.feature:121
+    Given I am on the clients page                                                            # features/step_definitions/shared_step.rb:83
+    When I press "Edit"                                                                       # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                                                              # features/step_definitions/shared_step.rb:6
+      | client_codice_fiscale | PLOCLN22A76865D |
+    And I press "Submit"                                                                      # features/step_definitions/shared_step.rb:2
+    Then I should be on the show page of the client called "Università degli Studi di Trento" # features/step_definitions/edit_a_client_step.rb:2
+    And I should see a notice indicating success                                              # features/step_definitions/shared_step.rb:12
+    And the "codice_fiscale" field should contain "PLOCLN22A76865D"                           # features/step_definitions/shared_step.rb:138
+
+  Scenario: error when not inserting nominative # features/edit_a_client.feature:132
+    Given I am on the clients page              # features/step_definitions/shared_step.rb:83
+    When I press "Edit"                         # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                # features/step_definitions/shared_step.rb:6
+      | client_nominative |  |
+    And I press "Submit"                        # features/step_definitions/shared_step.rb:2
+    Then I should get an error message          # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when inserting invalid email  # features/edit_a_client.feature:141
+    Given I am on the clients page              # features/step_definitions/shared_step.rb:83
+    When I press "Edit"                         # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                # features/step_definitions/shared_step.rb:6
+      | client_email | paolocollini |
+    And I press "Submit"                        # features/step_definitions/shared_step.rb:2
+    Then I should be on the new page of clients # features/step_definitions/create_a_new_client_steps.rb:14
+
+  Scenario: error when not inserting email # features/edit_a_client.feature:150
+    Given I am on the clients page         # features/step_definitions/shared_step.rb:83
+    When I press "Edit"                    # features/step_definitions/shared_step.rb:2
+    And I fill in the following:           # features/step_definitions/shared_step.rb:6
+      | client_email |  |
+    And I press "Submit"                   # features/step_definitions/shared_step.rb:2
+    Then I should get an error message     # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when not inserting via # features/edit_a_client.feature:159
+    Given I am on the clients page       # features/step_definitions/shared_step.rb:83
+    When I press "Edit"                  # features/step_definitions/shared_step.rb:2
+    And I fill in the following:         # features/step_definitions/shared_step.rb:6
+      | client_via |  |
+    And I press "Submit"                 # features/step_definitions/shared_step.rb:2
+    Then I should get an error message   # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when inserting invalid civico # features/edit_a_client.feature:168
+    Given I am on the clients page              # features/step_definitions/shared_step.rb:83
+    When I press "Edit"                         # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                # features/step_definitions/shared_step.rb:6
+      | client_civico | shjdgjasdk |
+    And I press "Submit"                        # features/step_definitions/shared_step.rb:2
+    Then I should get an error message          # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when not inserting civico # features/edit_a_client.feature:177
+    Given I am on the clients page          # features/step_definitions/shared_step.rb:83
+    When I press "Edit"                     # features/step_definitions/shared_step.rb:2
+    And I fill in the following:            # features/step_definitions/shared_step.rb:6
+      | client_civico |  |
+    And I press "Submit"                    # features/step_definitions/shared_step.rb:2
+    Then I should get an error message      # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when inserting invalid cap # features/edit_a_client.feature:186
+    Given I am on the clients page           # features/step_definitions/shared_step.rb:83
+    When I press "Edit"                      # features/step_definitions/shared_step.rb:2
+    And I fill in the following:             # features/step_definitions/shared_step.rb:6
+      | client_cap | dadsad |
+    And I press "Submit"                     # features/step_definitions/shared_step.rb:2
+    Then I should get an error message       # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when not inserting cap # features/edit_a_client.feature:195
+    Given I am on the clients page       # features/step_definitions/shared_step.rb:83
+    When I press "Edit"                  # features/step_definitions/shared_step.rb:2
+    And I fill in the following:         # features/step_definitions/shared_step.rb:6
+      | client_cap |  |
+    And I press "Submit"                 # features/step_definitions/shared_step.rb:2
+    Then I should get an error message   # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when not inserting città # features/edit_a_client.feature:204
+    Given I am on the clients page         # features/step_definitions/shared_step.rb:83
+    When I press "Edit"                    # features/step_definitions/shared_step.rb:2
+    And I fill in the following:           # features/step_definitions/shared_step.rb:6
+      | client_citta |  |
+    And I press "Submit"                   # features/step_definitions/shared_step.rb:2
+    Then I should get an error message     # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when not inserting telephone number # features/edit_a_client.feature:213
+    Given I am on the clients page                    # features/step_definitions/shared_step.rb:83
+    When I press "Edit"                               # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                      # features/step_definitions/shared_step.rb:6
+      | client_numero |  |
+    And I press "Submit"                              # features/step_definitions/shared_step.rb:2
+    Then I should get an error message                # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when inserting invalid codice fiscale # features/edit_a_client.feature:222
+    Given I am on the clients page                      # features/step_definitions/shared_step.rb:83
+    When I press "Edit"                                 # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                        # features/step_definitions/shared_step.rb:6
+      | client_codice_fiscale | 23123 |
+      | client_partita_iva    |       |
+    And I press "Submit"                                # features/step_definitions/shared_step.rb:2
+    Then I should get an error message                  # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when inserting invalid partita iva # features/edit_a_client.feature:232
+    Given I am on the clients page                   # features/step_definitions/shared_step.rb:83
+    When I press "Edit"                              # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                     # features/step_definitions/shared_step.rb:6
+      | client_codice_fiscale |       |
+      | client_partita_iva    | 23123 |
+    And I press "Submit"                             # features/step_definitions/shared_step.rb:2
+    Then I should get an error message               # features/step_definitions/shared_step.rb:16
+
+  Scenario: error when not inserting partita iva and codice fiscale # features/edit_a_client.feature:242
+    Given I am on the clients page                                  # features/step_definitions/shared_step.rb:83
+    When I press "Edit"                                             # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                                    # features/step_definitions/shared_step.rb:6
+      | client_codice_fiscale |  |
+      | client_partita_iva    |  |
+    And I press "Submit"                                            # features/step_definitions/shared_step.rb:2
+    Then I should get an error message                              # features/step_definitions/shared_step.rb:16
+
+Feature: edit a performance
+  In order to keep track of performances in my app
+  As a user
+  I want to edit a performance
+
+  Background:                                                                            # features/edit_a_performance.feature:7
+    Given there is a performance of the client called "Università degli Studi di Trento" # features/step_definitions/edit_a_performance_step.rb:1
+
+  Scenario: change duration of the performance                                                                   # features/edit_a_performance.feature:11
+    Given I am on the performances page                                                                          # features/step_definitions/shared_step.rb:87
+    And the performance of the client called "Università degli Studi di Trento" has not been yet invoiced        # features/step_definitions/shared_step.rb:142
+    When I press "Edit"                                                                                          # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                                                                                 # features/step_definitions/shared_step.rb:6
+      | performance_duration | 10 |
+    And I press "Submit"                                                                                         # features/step_definitions/shared_step.rb:2
+    Then I should be on the show page of the performance of the client called "Università degli Studi di Trento" # features/step_definitions/edit_a_performance_step.rb:7
+    And I should see a notice indicating success                                                                 # features/step_definitions/shared_step.rb:12
+    And the "duration" field should contain "10"                                                                 # features/step_definitions/shared_step.rb:138
+
+  Scenario: error when inserting invalid duration                                                         # features/edit_a_performance.feature:23
+    Given I am on the performances page                                                                   # features/step_definitions/shared_step.rb:87
+    And the performance of the client called "Università degli Studi di Trento" has not been yet invoiced # features/step_definitions/shared_step.rb:142
+    When I press "Edit"                                                                                   # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                                                                          # features/step_definitions/shared_step.rb:6
+      | performance_duration | hkl |
+    And I press "Submit"                                                                                  # features/step_definitions/shared_step.rb:2
+    Then I should get an error message                                                                    # features/step_definitions/shared_step.rb:16
+
+  Scenario: change description of a performance                                                                  # features/edit_a_performance.feature:33
+    Given I am on the performances page                                                                          # features/step_definitions/shared_step.rb:87
+    And the performance of the client called "Università degli Studi di Trento" has not been yet invoiced        # features/step_definitions/shared_step.rb:142
+    When I press "Edit"                                                                                          # features/step_definitions/shared_step.rb:2
+    When I fill in the following:                                                                                # features/step_definitions/shared_step.rb:6
+      | performance_description | applicazione web |
+    And I press "Submit"                                                                                         # features/step_definitions/shared_step.rb:2
+    Then I should be on the show page of the performance of the client called "Università degli Studi di Trento" # features/step_definitions/edit_a_performance_step.rb:7
+    And I should see a notice indicating success                                                                 # features/step_definitions/shared_step.rb:12
+    And the "description" field should contain "applicazione web"                                                # features/step_definitions/shared_step.rb:138
+
+  Scenario: error when editing a performance without specifying the client                                # features/edit_a_performance.feature:45
+    Given I am on the performances page                                                                   # features/step_definitions/shared_step.rb:87
+    And the performance of the client called "Università degli Studi di Trento" has not been yet invoiced # features/step_definitions/shared_step.rb:142
+    When I press "Edit"                                                                                   # features/step_definitions/shared_step.rb:2
+    And I do not select client from "performance[client_id]"                                              # features/step_definitions/shared_step.rb:28
+    And I press "Submit"                                                                                  # features/step_definitions/shared_step.rb:2
+    Then I should get an error message                                                                    # features/step_definitions/shared_step.rb:16
+
+  Scenario: change date of a performance                                                                         # features/edit_a_performance.feature:54
+    Given I am on the performances page                                                                          # features/step_definitions/shared_step.rb:87
+    And the performance of the client called "Università degli Studi di Trento" has not been yet invoiced        # features/step_definitions/shared_step.rb:142
+    When I press "Edit"                                                                                          # features/step_definitions/shared_step.rb:2
+    And I select "2" from "performance[date(3i)]"                                                                # features/step_definitions/shared_step.rb:24
+    And I select "December" from "performance[date(2i)]"                                                         # features/step_definitions/shared_step.rb:24
+    And I select "2017" from "performance[date(1i)]"                                                             # features/step_definitions/shared_step.rb:24
+    And I press "Submit"                                                                                         # features/step_definitions/shared_step.rb:2
+    Then I should be on the show page of the performance of the client called "Università degli Studi di Trento" # features/step_definitions/edit_a_performance_step.rb:7
+    And I should see a notice indicating success                                                                 # features/step_definitions/shared_step.rb:12
+    And the "date" field should contain "2017-12-02"                                                             # features/step_definitions/shared_step.rb:138
+
+  Scenario: change client of a performance                                                                       # features/edit_a_performance.feature:67
+    Given I am on the performances page                                                                          # features/step_definitions/shared_step.rb:87
+    And there is a client called "Segreteria Unitn"                                                              # features/step_definitions/shared_step.rb:20
+    And the performance of the client called "Università degli Studi di Trento" has not been yet invoiced        # features/step_definitions/shared_step.rb:142
+    When I press "Edit"                                                                                          # features/step_definitions/shared_step.rb:2
+    And I select "Segreteria Unitn" from "performance[client_id]"                                                # features/step_definitions/shared_step.rb:24
+    And I press "Submit"                                                                                         # features/step_definitions/shared_step.rb:2
+    Then I should be on the show page of the performance of the client called "Università degli Studi di Trento" # features/step_definitions/edit_a_performance_step.rb:7
+    And I should see a notice indicating success                                                                 # features/step_definitions/shared_step.rb:12
+    And the "client" field should contain "Segreteria Unitn"                                                     # features/step_definitions/shared_step.rb:138
+
+  Scenario: change rate of a performance                                                                         # features/edit_a_performance.feature:79
+    Given I am on the performances page                                                                          # features/step_definitions/shared_step.rb:87
+    And there is a rate with value "10"                                                                          # features/step_definitions/shared_step.rb:71
+    And the performance of the client called "Università degli Studi di Trento" has not been yet invoiced        # features/step_definitions/shared_step.rb:142
+    When I press "Edit"                                                                                          # features/step_definitions/shared_step.rb:2
+    And I select "10" from "performance[rate_id]"                                                                # features/step_definitions/shared_step.rb:24
+    And I press "Submit"                                                                                         # features/step_definitions/shared_step.rb:2
+    Then I should be on the show page of the performance of the client called "Università degli Studi di Trento" # features/step_definitions/edit_a_performance_step.rb:7
+    And I should see a notice indicating success                                                                 # features/step_definitions/shared_step.rb:12
+    And the "rate" field should contain "10"                                                                     # features/step_definitions/shared_step.rb:138
+
+  Scenario: error when editing an already invoiced performance                                            # features/edit_a_performance.feature:91
+    Given I am on the performances page                                                                   # features/step_definitions/shared_step.rb:87
+    And the performance of the client called "Università degli Studi di Trento" has been already invoiced # features/step_definitions/shared_step.rb:146
+    When I press "Edit"                                                                                   # features/step_definitions/shared_step.rb:2
+    Then the submit button should not appear                                                              # features/step_definitions/shared_step.rb:150
+
+Feature: edit a rate
+  In order to keep track of rates in my app
+  As a user
+  I want to edit a rate
+
+  Background:                              # features/edit_a_rate.feature:7
+    Given there is a rate with value "9.5" # features/step_definitions/shared_step.rb:71
+
+  Scenario: change a rate                            # features/edit_a_rate.feature:11
+    Given I am on the rates page                     # features/step_definitions/shared_step.rb:91
+    When I press "Edit"                              # features/step_definitions/shared_step.rb:2
+    When I fill in the following:                    # features/step_definitions/shared_step.rb:6
+      | rate_hourly_rate | 10 |
+    And I press "Submit"                             # features/step_definitions/shared_step.rb:2
+    Then I should be on the show page of my new rate # features/step_definitions/shared_step.rb:130
+    And I should see a notice indicating success     # features/step_definitions/shared_step.rb:12
+    And the "hourly_rate" field should contain "10"  # features/step_definitions/shared_step.rb:138
+
+  Scenario: error when inserting an hourly rate that already exists # features/edit_a_rate.feature:22
+    Given I am on the rates page                                    # features/step_definitions/shared_step.rb:91
+    And there is a rate with value "10"                             # features/step_definitions/shared_step.rb:71
+    When I press "Edit"                                             # features/step_definitions/shared_step.rb:2
+    When I fill in the following:                                   # features/step_definitions/shared_step.rb:6
+      | rate_hourly_rate | 10 |
+    And I press "Submit"                                            # features/step_definitions/shared_step.rb:2
+    Then I should get an error message                              # features/step_definitions/shared_step.rb:16
+
+Feature: edit settings
+  In order to manage my informations
+  As a user
+  I want to edit my settings
+
+  Background:                   # features/edit_settings.feature:7
+    Given I am on the home page # features/step_definitions/shared_step.rb:75
+
+  Scenario: change nominative                          # features/edit_settings.feature:11
+    Given I am on the settings page                    # features/step_definitions/shared_step.rb:67
+    When I press "Edit"                                # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                       # features/step_definitions/shared_step.rb:6
+      | Our_Nominative | AVAPOL |
+    And I press "Save"                                 # features/step_definitions/shared_step.rb:2
+    Then I should be on settings page                  # features/step_definitions/shared_step.rb:32
+    And I should see a notice indicating success       # features/step_definitions/shared_step.rb:12
+    And the "nominative" field should contain "AVAPOL" # features/step_definitions/shared_step.rb:138
+
+  Scenario: change email                                     # features/edit_settings.feature:21
+    Given I am on the settings page                          # features/step_definitions/shared_step.rb:67
+    When I press "Edit"                                      # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                             # features/step_definitions/shared_step.rb:6
+      | Our_Email | avalop@avapol.org |
+    And I press "Save"                                       # features/step_definitions/shared_step.rb:2
+    Then I should be on settings page                        # features/step_definitions/shared_step.rb:32
+    And I should see a notice indicating success             # features/step_definitions/shared_step.rb:12
+    And the "email" field should contain "avalop@avapol.org" # features/step_definitions/shared_step.rb:138
+
+  Scenario: change telephone                                      # features/edit_settings.feature:31
+    Given I am on the settings page                               # features/step_definitions/shared_step.rb:67
+    When I press "Edit"                                           # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                                  # features/step_definitions/shared_step.rb:6
+      | Our_Telephone | (0039) 999-9999999 |
+    And I press "Save"                                            # features/step_definitions/shared_step.rb:2
+    Then I should be on settings page                             # features/step_definitions/shared_step.rb:32
+    And I should see a notice indicating success                  # features/step_definitions/shared_step.rb:12
+    And the "telephone" field should contain "(0039) 999-9999999" # features/step_definitions/shared_step.rb:138
+
+  Scenario: change address                                    # features/edit_settings.feature:41
+    Given I am on the settings page                           # features/step_definitions/shared_step.rb:67
+    When I press "Edit"                                       # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                              # features/step_definitions/shared_step.rb:6
+      | Our_Address | via brennero, 99 |
+    And I press "Save"                                        # features/step_definitions/shared_step.rb:2
+    Then I should be on settings page                         # features/step_definitions/shared_step.rb:32
+    And I should see a notice indicating success              # features/step_definitions/shared_step.rb:12
+    And the "address" field should contain "via brennero, 99" # features/step_definitions/shared_step.rb:138
+
+  Scenario: change city                          # features/edit_settings.feature:51
+    Given I am on the settings page              # features/step_definitions/shared_step.rb:67
+    When I press "Edit"                          # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                 # features/step_definitions/shared_step.rb:6
+      | Our_City | Povo |
+    And I press "Save"                           # features/step_definitions/shared_step.rb:2
+    Then I should be on settings page            # features/step_definitions/shared_step.rb:32
+    And I should see a notice indicating success # features/step_definitions/shared_step.rb:12
+    And the "city" field should contain "Povo"   # features/step_definitions/shared_step.rb:138
+
+  Scenario: change cap                           # features/edit_settings.feature:61
+    Given I am on the settings page              # features/step_definitions/shared_step.rb:67
+    When I press "Edit"                          # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                 # features/step_definitions/shared_step.rb:6
+      | Our_Cap | 38123 |
+    And I press "Save"                           # features/step_definitions/shared_step.rb:2
+    Then I should be on settings page            # features/step_definitions/shared_step.rb:32
+    And I should see a notice indicating success # features/step_definitions/shared_step.rb:12
+    And the "cap" field should contain "38123"   # features/step_definitions/shared_step.rb:138
+
+  Scenario: change country                         # features/edit_settings.feature:71
+    Given I am on the settings page                # features/step_definitions/shared_step.rb:67
+    When I press "Edit"                            # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                   # features/step_definitions/shared_step.rb:6
+      | Our_State | Italy |
+    And I press "Save"                             # features/step_definitions/shared_step.rb:2
+    Then I should be on settings page              # features/step_definitions/shared_step.rb:32
+    And I should see a notice indicating success   # features/step_definitions/shared_step.rb:12
+    And the "country" field should contain "Italy" # features/step_definitions/shared_step.rb:138
+
+  Scenario: change taxation                      # features/edit_settings.feature:81
+    Given I am on the settings page              # features/step_definitions/shared_step.rb:67
+    When I press "Edit"                          # features/step_definitions/shared_step.rb:2
+    And I fill in the following:                 # features/step_definitions/shared_step.rb:6
+      | Our_Tax | 23 |
+    And I press "Save"                           # features/step_definitions/shared_step.rb:2
+    Then I should be on settings page            # features/step_definitions/shared_step.rb:32
+    And I should see a notice indicating success # features/step_definitions/shared_step.rb:12
+    And the "taxation" field should contain "23" # features/step_definitions/shared_step.rb:138
+
+99 scenarios (99 passed)
+624 steps (624 passed)
+0m31.922s
+Coverage report generated for Cucumber Features to /home/paolo/Scrivania/ruby/1.9.6/coverage. 492 / 495 LOC (99.39%) covered.

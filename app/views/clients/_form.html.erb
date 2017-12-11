@@ -1,0 +1,151 @@
+<%= form_with(model: client, local: true) do |form| %>
+  <% if client.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+      <ul>
+      <% client.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<center>
+
+<table style="width: 70%">
+  <tr>
+    <td>
+      <div class="field">
+        <%= form.label :nominative %>
+        <%= form.text_field :nominative, id: :client_nominative %>
+      </div>
+    </td>
+  </tr>
+</table>
+
+
+<table style="width: 70%">
+  <tr>
+    <td style="width: 50%">
+      <div class="field">
+        <%= form.label :email %>
+        <%= form.email_field :email, id: :client_email %>
+      </div>
+    </td>
+
+    <td style="width: 50%">
+      <div class="field">
+        <%= form.label :numero , 'Telephone number '%>
+        <%= form.text_field :numero, id: :client_numero %>
+      </div>
+    </td>
+  </tr>
+</table>
+
+
+<table style="width: 70%">
+  <tr>
+    <td style="width: 80%">
+      <div class="field">
+        <%= form.label :via %>
+        <%= form.text_field :via, id: :client_via %>
+      </div>
+    </td>
+
+    <td style="width: 20%">
+      <div class="field">
+        <%= form.label :civico %>
+        <%= form.text_field :civico, id: :client_civico %>
+      </div>
+    </td>
+  </tr>
+</table>
+
+
+<table style="width: 70%">
+  <tr>
+    <td style="width: 50%">
+      <div class="field">
+        <%= form.label :citta %>
+        <%= form.text_field :citta, id: :client_citta %>
+      </div>
+    </td>
+
+    <td style="width: 50%">
+      <div class="field">
+        <%= form.label :cap %>
+        <%= form.text_field :cap, id: :client_cap %>
+      </div>
+    </td>
+  </tr>
+</table>
+
+
+<table style="width: 70%">
+  <tr>
+    <td style="width: 50%">
+      <div class="field">
+        <%= form.label :provincia %>
+        <%= form.text_field :provincia, id: :client_provincia %>
+      </div>
+    </td>
+
+    <td style="width: 50%">
+      <div class="field">
+        <%= form.label :stato %>
+        <%= form.text_field :stato, id: :client_stato %>
+      </div>
+
+    </td>
+  </tr>
+</table>
+
+
+<table style="width: 70%">
+  <tr>
+    <td style="width: 50%">
+      <div class="field">
+        <%= form.label :partita_iva , 'P.IVA'%>
+        <%= form.text_field :partita_iva, id: :client_partita_iva %>
+      </div>
+    </td>
+
+    <td style="width: 50%">
+      <div class="field">
+        <%= form.label :codice_fiscale %>
+        <%= form.text_field :codice_fiscale, id: :client_codice_fiscale %>
+      </div>
+
+    </td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</center>
+
+
+
+
+
+  <div class="actions">
+    <center>
+      <%= form.submit 'Submit', :class => 'new-btn'%>
+    </center>
+  </div>
+<% end %>

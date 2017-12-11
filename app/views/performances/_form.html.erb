@@ -1,0 +1,86 @@
+<%= form_with(model: performance, local: true) do |form| %>
+  <% if performance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(performance.errors.count, "error") %> prohibited this performance from being saved:</h2>
+
+      <ul>
+      <% performance.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+
+
+
+  <center>
+
+  <table style="width: 50%">
+    <tr>
+      <td style="width: 90%">
+        <div class="field">
+          <%= form.label :client_id , 'Select client'%>
+          <%= form.select :client_id, options_for_select( Client.all.map{ |s| [s.nominative, s.id] }, selected: @performance.client_id ) , {include_blank: true} ,  {:class => 'pickers'} %>
+        </div>
+      </td>
+      <td style="width: 10%">
+        <div class="field">
+          <%= form.label :rate_id %>
+          <%= form.select :rate_id, options_for_select( Rate.all.map{ |s| [s.hourly_rate, s.id] }, selected: @performance.rate_id ) , {include_blank: true}, {:class => 'pickers'}%>
+        </div>
+      </td>
+    </tr>
+</table>
+
+    <table style="width: 50%">
+    <tr style="height: 100px">
+      <td>
+        <div class="field">
+          <%= form.label :description, 'Description' %>
+          <%= form.text_field :description, id: :performance_description%>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+
+  <table style="width: 50%">
+    <tr>
+      <td style="width: 90%">
+        <div class="field">
+          <%= form.label :date , 'Date'%>
+          <%= form.date_select :date, {id: :performance_date, order: [:day, :month, :year], end_year: Date.today.year} , {:class => 'pickers'}%>
+        </div>
+      </td>
+
+      <td style="width: 10%">
+        <div class="duration_picker">
+          <%= form.label :duration , 'Duration'%>
+          <%= form.number_field :duration, id: :performance_duration, step: 1, min: 0  %>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+
+
+
+
+
+
+</center>
+
+
+
+
+
+  <div class="actions">
+    <center>
+      <%= form.submit 'Submit', :class => 'new-btn'%>
+    </center>
+  </div>
+
+<% end %>

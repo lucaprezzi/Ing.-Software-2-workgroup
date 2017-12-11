@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<% provide(:title, "Rates") %>
+
+
+<div align="center">
+  <h1>Rates</h1>
+  <br>
+</div>
+
+<div align="center">
+<table>
+  <thead>
+    <tr>
+      <th>Hourly rate</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody class="elenchi">
+    <% @rates.each do |rate| %>
+      <tr>
+        <td style="text-align: center;"><%='%.2f' % rate.hourly_rate %> €</td>
+        <td><%= link_to 'Edit', edit_rate_path(rate) , :class=>"edit-btn"%></td>
+        <td><%= link_to 'Delete', rate, method: :delete, data: { confirm: 'Si ricorda che eliminare una tariffa comporterà l\'eliminazione di tutte le prestazioni fatte con essa. Si desidera procedere comunque?' } , :class=>"delete-btn"%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
+  Remember that deleting a rate will delete also all the relative performances.
+
+
+<br>
+
+<%= link_to 'New Rate', new_rate_path, :class=>"new-btn" %>
+</div>

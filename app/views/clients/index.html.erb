@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+<% provide(:title, "Clients") %>
+
+  <div align="center">
+    <h1 >Clients</h1>
+    <br>
+  </div>
+
+  <div align="center">
+   <table>
+    <thead>
+      <tr>
+        <th>Nominative</th>
+        <th>Invoiced</th>
+        <th nowrap>To invoice</th>
+        <th colspan="6"></th>
+      </tr>
+    </thead>
+
+    <tbody class="elenchi">
+      <% @clients.each do |client| %>
+        <tr>
+          <td><%= client.nominative %></td>
+
+          <td style="text-align: center;"><%= '%.2f' % client.invoiced %> €</td>
+          <td style="text-align: center;"><%= '%.2f' % client.da_fatturare %> €</td>
+          <td><%= link_to 'Details', client, :class=>"show-btn"%></td>
+          <td><%= link_to 'Edit', edit_client_path(client) , :class=>"edit-btn"%></td>
+          <td><%= link_to 'Delete', client, method: :delete, data: { confirm: 'Are you sure?' } , :class=>"delete-btn"%></td>
+        </tr>
+      <% end %>
+    </tbody>
+   </table>
+
+   <br>
+
+  <!-- QUI DEVO MODIFICARE IL PULSANTE CON UN + -->
+   <%= link_to 'New Client', new_client_path,  :class=>"new-btn" %>
+   <!-- VALUTARE AGGIUNTA SIMBOLO  <i class="fa fa-user-plus" aria-hidden="true"></i> + -->
+
+</div>

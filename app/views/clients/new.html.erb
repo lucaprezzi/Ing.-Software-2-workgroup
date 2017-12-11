@@ -1,0 +1,11 @@
+<% provide(:title, "New client") %>
+<div>
+  <h1><center> New Client </center></h1>
+  <br>
+</div>
+
+  <%= render 'form', client: @client %>
+
+<center>
+  <%= link_to 'Back', clients_path , :class=>"show-btn"%>
+</center>

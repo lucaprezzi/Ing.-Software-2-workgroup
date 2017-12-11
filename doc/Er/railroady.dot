@@ -1,0 +1,10 @@
+digraph models_diagram {
+	graph[overlap=false, splines=true, bgcolor="none"]
+	"Rate" [shape=Mrecord, label="{Rate|id :INTEGER\lhourly_rate :float\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"Performance" [shape=Mrecord, label="{Performance|id :INTEGER\lclient_id :integer\ldescription :text\ldate :date\lduration :integer\linvoiced :boolean\lrate_id :integer\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"Invoice" [shape=Mrecord, label="{Invoice|id :INTEGER\lclient_id :integer\lnumber :integer\ldate :date\lamount :float\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"ApplicationRecord" []
+	"Client" [shape=Mrecord, label="{Client|id :INTEGER\lnominative :varchar\lemail :varchar\lvia :varchar\lcivico :integer\lcap :integer\lcitta :varchar\lprovincia :varchar\lstato :varchar\lnumero :varchar\lpartita_iva :varchar\lcodice_fiscale :varchar\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"Rate" -> "Performance" [arrowtail=odot, arrowhead=crow, dir=both color="#56398A"]
+	"Client" -> "Performance" [arrowtail=odot, arrowhead=crow, dir=both color="#EE569E"]
+}

@@ -1,0 +1,13 @@
+<% provide(:title, "Edit client: " + @client.nominative) %>
+
+<div>
+  <h1><center> Edit Client </center></h1>
+  <br>
+</div>
+
+<%= render 'form', client: @client %>
+
+<center>
+  <%= link_to 'Show', @client , :class=>"show-btn"%> |
+  <%= link_to 'Back', clients_path , :class=>"show-btn"%>
+</center>

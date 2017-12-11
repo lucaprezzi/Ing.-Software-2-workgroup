@@ -1,0 +1,41 @@
+<% provide(:title, "Performances") %>
+<center>
+  <p id="notice"><%= notice %></p>
+
+
+<div class="show_recap">
+  <p>
+    <strong>Client:</strong>
+    <%= @performance.client %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @performance.description %>
+  </p>
+
+  <p>
+    <strong>Date:</strong>
+    <%= @performance.date %>
+  </p>
+
+  <p>
+    <strong>Duration:</strong>
+    <%= @performance.duration %> h
+  </p>
+
+  <p>
+    <strong>Invoiced:</strong>
+    <%= if (@performance.invoiced) then "Yes" else "No" end %>
+  </p>
+
+  <p>
+    <strong>Rate:</strong>
+    <%='%.2f' % @performance.rate %> €
+  </p>
+</div>
+<br><br>
+<%= link_to 'Edit', edit_performance_path(@performance) , :class=>"show-btn"%> |
+<%= link_to 'Back', performances_path , :class=>"show-btn"%>
+
+</center>

@@ -1,0 +1,119 @@
+<% provide(:title, "Setting") %><p id="notice"><%= notice %></p>
+
+
+
+<div align="center">
+  <h1>Settings</h1>
+  <br>
+  The following data will be used in the invoice header.
+</div>
+
+
+
+
+<% if (@id == "edit") then %>
+<form action="/static_pages" method="change">
+
+<center>
+  <div style=" text-align: left; margin-top: 35px; font-size: 22px !important; font-weight: bold; ">
+</div>
+  <table style="width: 53%;" >
+    <tr><td>
+      Nominative:
+      <input id="Our_Nominative" value="<%=give_data("Our_Nominative")%>" name="Our_Nominative" type="text">
+    </td></tr>
+    <tr><td>
+      Email:
+      <input id="Our_Email" value="<%=give_data("Our_Email")%>" name="Our_Email" type="text">
+    </td></tr>
+    <tr><td>
+      Telephone:
+      <input id="Our_Telephone" value="<%=give_data("Our_Telephone")%>" name="Our_Telephone" type="text">
+    </td></tr>
+    <tr><td>
+      Address:
+      <input id="Our_Address" value="<%=give_data("Our_Address")%>" name="Our_Address" type="text">
+    </td></tr>
+  </table>
+
+    <table style="width: 53%;" >
+      <tr>
+        <td style="width: 50%">
+          City:
+          <input id="Our_City" value="<%=give_data("Our_City")%>" name="Our_City" type="text">
+        </td>
+        <td style="width: 50%">
+          Cap:
+          <input id="Our_Cap" value="<%=give_data("Our_Cap")%>" name="Our_Cap" type="text">
+        </td>
+      </tr>
+    </table>
+
+      <table style="width: 53%;" >
+        <tr>
+          <td style="width: 85%">
+            Country:
+              <input id="Our_State" value="<%=give_data("Our_State")%>" name="Our_State" type="text">
+          </td>
+          <td style="width: 10%;">
+            Taxation:
+            <input id="Our_Tax" value="<%=give_data("Our_Tax")%>" name="Our_Tax" type="text" >
+          </td>
+        <td style="width: 5%">
+          %
+        </td>
+      </tr>
+      </table>
+
+      <button type="submit" class="new-btn" value="Save">
+         Save
+      </button>
+</form>
+
+<br><br>
+<a href="/settings" class="show-btn">
+  Back
+</a>
+</center>
+
+
+<% else %>
+
+<center>
+
+  <div class="show_recap">
+    <p>
+    <strong>Nominative:</strong>  <%=give_data("Our_Nominative")%>
+    </p>
+    <p>
+      <strong>Email:</strong>  <%=give_data("Our_Email")%>
+    </p>
+    <p>
+      <strong>Telephone:</strong>  <%=give_data("Our_Telephone")%>
+    </p>
+    <p>
+      <strong>Address:</strong>  <%=give_data("Our_Address")%>
+    </p>
+    <p>
+      <strong>Cap:</strong>  <%=give_data("Our_Cap")%>
+    </p>
+    <p>
+      <strong>City:</strong>  <%=give_data("Our_City")%>
+    </p>
+    <p>
+      <strong>Country:</strong>  <%=give_data("Our_State")%>
+    </p>
+    <p>
+      <strong>Tax:</strong>  <%=give_data("Our_Tax")%>%
+    </p>
+  </div>
+<br>
+
+<a href="/settings/edit" class="show-btn">
+  Edit
+</a>
+
+</center>
+
+
+<% end %>

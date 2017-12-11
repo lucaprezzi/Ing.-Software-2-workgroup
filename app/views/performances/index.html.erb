@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+<% provide(:title, "Performances") %>
+
+
+
+
+<div align="center">
+  <% if (@id_p != "true") then %>
+  <h1 >Performances</h1>
+    <%= link_to 'Show only not invoiced performances', "/performances/no_invoiced/true" , :class=>"show-btn"%>
+  <% else %>
+  <h1 >Not invoiced Performances</h1>
+    <%= link_to 'Show all performances', "/performances" , :class=>"show-btn"%>
+  <% end %>
+  <br>
+</div>
+
+<div align="center">
+<table>
+  <thead>
+    <tr>
+      <th>Client</th>
+      <th>Description</th>
+      <th>Date</th>
+      <th>Duration</th>
+      <th>Invoiced</th>
+      <th>Rate</th>
+      <th colspan="6"></th>
+    </tr>
+  </thead>
+
+  <tbody class="elenchi">
+    <% @performances.reverse.each do |performance| %>
+      <tr>
+        <td><%= performance.client %></td>
+        <td><%= performance.description %></td>
+        <td nowrap><%= performance.date.to_formatted_s(:rfc822) %></td>
+        <td style="text-align: center;" nowrap><%= performance.duration %> h</td>
+        <td style="text-align: center;"><%= if (performance.invoiced) then "Yes" else "No" end %></td>
+        <td style="text-align: center;" nowrap><%= '%.2f' % performance.rate.to_s %> €</td>
+        <td><%= link_to 'Details', performance , :class=>"show-btn"%></td>
+        <td><%= link_to 'Edit', edit_performance_path(performance) , :class=>"edit-btn"%></td>
+        <td><%= link_to 'Delete', performance, method: :delete, data: { confirm: 'Are you sure?' } , :class=>"delete-btn"%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Performance', new_performance_path, :class=>"new-btn"  %>
+</div>

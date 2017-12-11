@@ -1,0 +1,13 @@
+<% provide(:title, "Edit invoice") %>
+
+<div>
+  <h1><center> Edit Invoice </center></h1>
+  <br>
+</div>
+
+<%= render 'form', invoice: @invoice %>
+
+<center>
+  <%= link_to 'Show', @invoice , :class=>"show-btn"%> |
+  <%= link_to 'Back', invoices_path , :class=>"show-btn"%>
+</center>

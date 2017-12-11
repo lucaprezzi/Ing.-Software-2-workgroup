@@ -1,0 +1,14 @@
+<% provide(:title, "New invoice") %>
+
+<div>
+  <h1><center> New Invoice </center></h1>
+  <br>
+</div>
+
+<div align="center">
+  <%= render 'form', invoice: @invoice %>
+</div>
+
+<center>
+  <%= link_to 'Back', invoices_path , :class=>"show-btn"%>
+</center>

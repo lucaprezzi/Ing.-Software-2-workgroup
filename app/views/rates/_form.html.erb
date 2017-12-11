@@ -1,0 +1,34 @@
+<%= form_with(model: rate, local: true) do |form| %>
+  <% if rate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rate.errors.count, "error") %> prohibited this rate from being saved:</h2>
+
+      <ul>
+      <% rate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<center>
+  <div class="label_center">
+    <center>Hourly Rate</center>
+  </div>
+  <table style="width: 8%">
+    <tr>
+      <td>
+        <div class="duration_picker">
+          <%= form.number_field :hourly_rate, id: :rate_hourly_rate, step: 0.5, min: 0 %>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+
+  <div class="actions">
+      <%= form.submit 'Submit', :class => 'new-btn'%>
+  </div>
+<% end %>
+
+
+</center>

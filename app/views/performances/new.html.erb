@@ -1,0 +1,12 @@
+<% provide(:title, "New performance") %>
+
+<div>
+  <h1><center> New Performance </center></h1>
+  <br>
+</div>
+
+<%= render 'form', performance: @performance %>
+
+<center>
+  <%= link_to 'Back', performances_path , :class=>"show-btn"%>
+</center>

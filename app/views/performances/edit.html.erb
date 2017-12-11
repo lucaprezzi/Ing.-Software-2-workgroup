@@ -1,0 +1,19 @@
+<% provide(:title, "Edit performance") %>
+
+<div>
+  <h1><center> Edit Performance </center></h1>
+  <br>
+</div>
+<% if (!@performance.invoiced) then %>
+<%= render 'form', performance: @performance %>
+<% else %>
+<center>
+  <div class="alert_box">
+      You cannot edit performances that have been already invoiced.
+  </div>
+</center>
+<% end %>
+<center>
+  <%= link_to 'Show', @performance , :class=>"show-btn"%> |
+  <%= link_to 'Back', performances_path , :class=>"show-btn"%>
+</center>

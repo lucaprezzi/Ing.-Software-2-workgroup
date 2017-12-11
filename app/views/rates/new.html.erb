@@ -1,0 +1,12 @@
+<% provide(:title, "New rate") %>
+
+<div>
+  <h1><center> New Rate </center></h1>
+  <br>
+</div>
+
+<%= render 'form', rate: @rate %>
+
+<center>
+  <%= link_to 'Back', rates_path , :class=>"show-btn"%>
+</center>

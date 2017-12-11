@@ -1,0 +1,342 @@
+body {
+  // background-color: #474747;
+  color: white;
+  margin: 33px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  background-image: url('wp3.jpg');
+}
+
+
+p, ol, ul, td {
+  font-family: 'Raleway', sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { /* BOTTONE DI DEFAULT */
+  color: white;
+
+  &:hover {
+    color: white;
+    background-color: #005FBC;
+  }
+}
+
+.home-btn {
+  background-color: #1E90FF; /*azzurro*/
+  border: none;
+  color: white;
+  width: 200px;
+  height: 70px;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  display: inline-block;
+  font-size: 20px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  transition: all 0.3s ease 0s;
+  padding-top:25px;
+  border-radius: 2px;
+
+  &:hover {
+    color: white;
+    text-decoration: none; /* evita underline in hover */
+    background-color: #006ad1; /* va cambiato*/
+  }
+}
+
+.new-btn {
+  background-color: #28a428; /*verde scuro*/
+  border: none;
+  color: white;
+  width: auto;
+  height: auto;
+  margin-top: 20px;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  display: inline-block;
+  font-size: 18px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  transition: all 0.3s ease 0s;
+  padding: 5px 8px 5px 8px;
+  border-radius: 2px;
+
+  &:hover {
+    color: white;
+    text-decoration: none; /* evita underline in hover */
+    background-color: #196719; /* verde scurissimo*/
+  }
+}
+
+
+.delete-btn {
+  background-color: #da0011; /*rosso*/
+  position: relative;
+  top: -4px;
+  border: none;
+  color: white;
+  width: auto;
+  height: auto;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  display: inline-block;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  transition: all 0.3s ease 0s;
+  padding: 2px 4px 2px 4px;
+  border-radius: 2px;
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+    background-color: #a7000d; /* rosso scuro*/
+  }
+}
+
+.edit-btn {
+  background-color: #008df4; /*azzurro*/
+  position: relative;
+  top: -4px;
+  border: none;
+  color: white;
+  width: auto;
+  height: auto;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  display: inline-block;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  transition: all 0.3s ease 0s;
+  padding: 2px 7px 2px 7px;
+  border-radius: 2px;
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+    background-color: #0061a7; /* azzurro scuro*/
+  }
+}
+
+.show-btn {
+  background-color: #008df4; /*azzurro*/
+  position: relative;
+  top: -4px;
+  border: none;
+  color: white;
+  width: auto;
+  height: auto;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  display: inline-block;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  transition: all 0.3s ease 0s;
+  padding: 2px 7px 2px 7px;
+  border-radius: 2px;
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+    background-color: #0061a7; /* azzurro scuro*/
+  }
+}
+
+
+.overview { /* riepilogo in home */
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  margin-left: 50%;
+  margin-top: 10%;
+  padding-left: 20px;
+  line-height: 70px; /* interlinea */
+  position: absolute;
+  background-color: #707070; /*azzurro*/
+  border: none;
+  color: white;
+  width: 340px;
+  height: 210px;
+  border-radius: 4px;
+
+}
+
+.tab {
+  position: absolute;
+  background-color: #474747;
+  width:60%;
+  height:70%;
+  font-family: 'Open Sans', sans-serif;
+  margin-left: 5%;
+}
+
+/*TITOLI COLONNE*/
+th {
+  padding: 0 5px 5px 10px;
+  font-size: 15px;
+}
+
+td {
+  padding: 10px 10px 0 10px !important;
+}
+
+
+
+.elenchi tr:hover{
+
+  background-color: rgba(0,0,0,0.4);
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 1%;
+  }
+}
+
+
+
+#notice {
+  color: green;
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.field_with_errors { /* campi rossi nei form */
+  padding: 2px;
+  border-radius: 6px;
+  background-color: rgba(255,0,0,0.1);
+  width: auto;
+  display: block;
+
+}
+
+#error_explanation { /* riquadro avviso campi non compilati */
+  color: red;
+  width: 50%;
+  border: 2px solid red;
+  border-radius: 4px;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  margin-left: 25%;
+  background-color: rgba(0,0,0,0.3);
+
+  h2 {  /* titolo casella errori*/
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 8px 8px 8px 8px;
+    font-size: 18px;
+    margin: -7px -7px 0;
+    background-color: red;
+  }
+
+  ul li {
+    font-size: 12px;
+    margin: 6px 0 0 0;
+    list-style: square;
+  }
+}
+
+label { /* etichette campi form */
+  display: block;
+  font-size: 22px !important;
+  text-align: left;
+}
+
+.label_center { /* etichette campi form */
+  display: block;
+  font-weight: bold;
+  font-size: 22px !important;
+  text-align: left;
+}
+
+
+.field input {  /*campi forms */
+  margin-left: 30%; /* 50 - (40/2)*/
+  margin-bottom: 15px;
+  width: 40%;
+    color: white;
+    font-size: 18px !important;
+    padding: 10px;
+    border: 2px solid grey;
+    border-radius:4px;
+}
+
+
+
+.duration_picker input {  /*campi forms */
+    color: white;
+    font-size: 16px !important;
+    border: 2px solid grey;
+    border-radius:4px;
+}
+
+.pickers { /* pickers nei form */
+  color: white !important;
+  font-size: 18px;
+  background-color: transparent;
+
+
+  margin-bottom: 15px;
+  width: auto;
+    color: white;
+    font-size: 18px !important;
+    padding: 10px;
+    border: 2px solid #1E90FF;
+    border-radius:4px;
+
+
+
+  &:hover {
+    text-decoration: bold;
+    background-color: black;
+  }
+}
+
+.show_recap{
+  border: 2px solid grey;
+  padding: 10px 10px 3px 10px;
+  margin-top: 20px;
+  align-items: center;
+  max-width: 70%;
+}
+
+.alert_box{
+  background-color: rgba(100%, 00, 0, 0.6);
+  border: 2px solid white;
+  width: 200px;
+  color: white;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  padding: 7px 7px 7px 7px;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+.navbar{
+  background-color: #474747; /*grigio */
+  color: white;
+}
+
+.navbar_links{
+  color: white !important;
+  font-weight: bold !important;
+  font-size: 16px !important;
+
+  &:hover{
+    background-color: #333333 !important; /*grigio scuro*/
+}
+}
+
+.navbar-text{
+  color: red !important;
+}
+
+
+
+
+
+/*-------------EXPERIMENTAL---------------*/

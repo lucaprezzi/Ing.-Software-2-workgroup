@@ -1,0 +1,11 @@
+<% provide(:title, "Invoice: " + @invoice.date.year.to_s + " " + @invoice.number.to_s) %>
+
+<center>
+
+Invoice: <%= @invoice.date.year %>-<%= @invoice.number %><br>Client: <%= @invoice.client.to_s %><br>
+
+<%= link_to "View", "/invoice_pdf/#{@invoice.date.year}-#{@invoice.number}.pdf", target:"_blank" , :class=>"show-btn"%> </td>
+<%= link_to "Download", "/invoice_pdf/#{@invoice.date.year}-#{@invoice.number}.pdf", download: "#{@invoice.date.year}-#{@invoice.number}.pdf", :class=>"show-btn" %>
+
+<%= link_to 'Back', invoices_path , :class=>"show-btn"%></br></br></br></br>
+</center>

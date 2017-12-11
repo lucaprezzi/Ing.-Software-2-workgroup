@@ -1,0 +1,68 @@
+<% provide(:title, "Client: "+@client.nominative) %>
+
+<center>
+  <p id="notice"><%= notice %></p>
+
+
+
+<div class="show_recap">
+  <p>
+    <strong>Nominative:</strong>
+    <%= @client.nominative %>
+  </p>
+
+  <p>
+  <strong>Email:</strong>
+  <%= @client.email %>
+  </p>
+
+  <p>
+    <strong>Address:</strong>
+    <%= @client.via %>,
+      <%= @client.civico %>
+      <br>
+   <%= @client.cap %>
+   <%= @client.citta %>
+  </p>
+
+
+  <p>
+    <strong>Province:</strong>
+    <%= @client.provincia %>
+  </p>
+
+  <p>
+  <strong>Country:</strong>
+  <%= @client.stato %>
+  </p>
+
+  <p>
+  <strong>Telephone number:</strong>
+  <%= @client.numero %>
+  </p>
+
+  <p>
+  <strong>Partita iva:</strong>
+  <%= @client.partita_iva %>
+  </p>
+
+  <p>
+  <strong>Codice fiscale:</strong>
+  <%= @client.codice_fiscale %>
+  </p>
+
+  <p>
+  <strong>Amount Invoiced:</strong>
+  <%= '%.2f' % @client.invoiced %> €
+  </p>
+
+  <p>
+    <strong>Amount to invoice:</strong>
+    <%= '%.2f' % @client.da_fatturare %> €
+  </p>
+</div>
+
+  <br>
+  <%= link_to 'Edit', edit_client_path(@client) , :class=>"show-btn"%> |
+  <%= link_to 'Back', clients_path , :class=>"show-btn"%>
+</center>

@@ -3,7 +3,7 @@ Questa repository è dedicata allo sviluppo di un'applicazione di fatturazione, 
 
 Componenti del gruppo: 
  * Viktoriya Kasiy
- * Luca prezzi
+ * Luca Prezzi
  * Paolo Saglia
 
 Tutta la documentazione del software si trova nella cartella "doc".
